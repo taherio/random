@@ -1,0 +1,19 @@
+set BEACON_INPUT {
+	if ("ssh" eq beacon_info($1, "session")) {
+		if ($2 eq mynick()) {
+			return "\Ussh\o> $3";
+		}
+		else {
+			return "$2 \Ussh\o> $3";
+		}
+	}
+	else {
+		if ($2 eq mynick()) {
+			return "\Ubeacon @" . dstamp(ticks()) . "\o> $3";
+		}
+		else {
+			return "$2 \Ubeacon @" . dstamp(ticks()) . "\o> $3";
+		}
+		return "$2 \Ubeacon @" . dstamp(ticks()) . "\o> $3";
+	}
+}
